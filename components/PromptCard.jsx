@@ -5,7 +5,7 @@ import React from 'react'
 import { useState } from 'react';
 import Image from 'next/image';
 import {useSession} from 'next-auth/react';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 function PromptCard({post, handleTagClick, handleEdit, handleDelete}) {
 
 const {data:session} = useSession()
