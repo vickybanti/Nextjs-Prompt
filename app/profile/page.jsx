@@ -12,17 +12,18 @@ function Profile() {
   const [posts, setPosts] = useState([])
 
   const {data:session} = useSession()
+  const userId = session?.user.id
   console.log({data:session})
   useEffect(()=>{
     const fetchPost = async ()=> {
-        const res = await fetch(`/api/users/${session?.user.id}/posts`);
+        const res = await fetch(`/api/users/${userId}/posts`);
         const data = await res.json();
         setPosts(data)
     }
-    if(session?.user.id) fetchPost();
+    if(userId) fetchPost();
 
     
-},[])
+},[userId])
 
 
   const handleEdit = async (post) => {

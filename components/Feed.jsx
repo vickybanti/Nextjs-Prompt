@@ -24,7 +24,8 @@ function Feed() {
     const [searchText, setSearchText] = useState('')
     const handleSearch = (e) => {
 
-
+        e.preventDefault()
+        setSearchText(e.target.value)
     }
 
     useEffect(()=>{
